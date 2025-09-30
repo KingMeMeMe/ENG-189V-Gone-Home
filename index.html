@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Gone Home 10 Minute Map </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+
+        <meta name="author" content="Marcus Eng">
+
+        <!-- <link rel="icon" href="Static/Images/Favicon.png" type ="image/x-icon"-->
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+            body {
+                justify-content: center;
+                background-color: rgb(15, 14, 14);
+            }
+            .container {
+                display: grid;
+                grid-template-columns: 6fr 3fr;
+                grid-template-areas:
+                "map commentary"
+                "map commentary"
+                "map snapshot";
+                gap: 10px;
+                background-color: rgb(23, 18, 18);
+                padding: 5px;
+                height: 90vh;
+                width: 89vw;
+                margin: 0 auto;
+            }
+            .container > div {
+                border-style: dashed;
+                border-color: white;
+            }
+            .container > div.map {
+                grid-area: map;
+            }
+            .container > div.commentary {
+                grid-area: commentary;
+                background-clip: padding-box;
+                background-color: rgb(168, 149, 137);
+                border-width: 0.5em;
+                border-image: url(CommentaryBorder.png) 25 round;
+                font-family: Caveat;
+
+            }
+            .container > div.snapshot {
+                border-style: solid;
+                border-width: 0.25em;
+                border-color: white;
+            }
+            </style>
+
+
+
+    </head>
+
+    <body>
+        
+        <div class="container">
+            <div class="map"> </div>
+            <div class="commentary"> </div>
+            <div class="snapshot"> </div>
+        </div>
+
+    </body>
+
+
+</html>
