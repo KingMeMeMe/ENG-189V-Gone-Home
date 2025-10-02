@@ -99,7 +99,7 @@ function update_travel () {
     else {
         let currentStepInfo = mapSteps.get(currentTravelStep);
         let randomVar = "?" + Math.random()+"') no-repeat; background-size: contain; background-position: center;"; //makes sure these once-looping gifs are reloaded on step
-        document.getElementById("map").style = currentStepInfo.map+randomVar;
+        document.getElementById("map").style = currentStepInfo.map+"') no-repeat; background-size: contain; background-position: center;";
         document.getElementById("snp").style = currentStepInfo.snp+randomVar;
         document.getElementById("com").innerHTML = currentStepInfo.com;
     }
