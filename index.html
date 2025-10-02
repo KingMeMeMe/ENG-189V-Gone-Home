@@ -55,7 +55,7 @@
                 border-width: 0.5em;
                 border-image: url(CommentaryBorder.png) 25 round;
                 font-family: Caveat;
-                font-size:x-large;
+                font-size:larger;
                 word-break:normal;
                 white-space:normal;
                 overflow-y: scroll;
@@ -74,6 +74,37 @@
                 padding: 0;
                
             }
+
+
+            .tooltip {
+                position: fixed;
+                bottom: 1em;
+                right: 1em;
+
+                color: white;
+                cursor: pointer;
+            }
+
+            .tooltiptext {
+                visibility: hidden; 
+                width: 175px;
+                background-color: black;
+                color: white;
+                text-align: center;
+                padding: 5px 0;
+                border-width: 1.5em;
+                border-image: url(SingleBorder.png) 25 round;
+                position: absolute;
+                z-index: 1; 
+                bottom: 100%;
+                right: 105%;
+
+                font-family: Caveat;
+            }
+
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+            }
             </style>
 
 
@@ -81,22 +112,25 @@
     </head>
 
     <body>
+        <script src="pagemechanics.js"></script>
         
         <div class="container">
-            <div class="travel-step" id="1" style="display:none;"></div>
-            <div class="map" id="map"> </div>
-            <div class="snapshot" id="snp" style="background: url('placeholder.png') no-repeat; background-size: contain; background-position: center;"> </div>
+            <div class="map" id="map" style="background: url('img/maps/map0000.png') no-repeat; background-size: contain; background-position: center;"> </div>
+            <div class="snapshot" id="snp" style="background: url('img/snapshots/blank.gif') no-repeat; background-size: contain; background-position: center;"> </div>
             <div class="commentary" id="com"> 
-                <p>It’s about an hour or so into my playthrough. I’ve explored the left wing of the house pretty linearly, going from the dad’s office to the TV room and the music room, all the way down until I met the locked basement door. 
+                <p>It’s been about an hour or so into my playthrough. Since I’m playing this game with my partner, we’ve been voice-acting all the written notes, and progress is relatively slow. So far, we’ve explored the left wing of the house pretty linearly, going from the dad’s office to the TV room and the music room, all the way down until we met the locked basement door.
                 </p>
-                <p>Right now, I’m exploring the top floor since I tried to open the door to the right wing and saw that it was locked as well.
+                <p>Right now, we’re exploring the top floor since we tried to open the door to the right wing and saw that it was locked as well.
                 </p>
             </div>
         </div>
 
         <p style="font-family: Caveat; color: white; padding: 0em 5em;" id="instructions"> Press [SPACE] to advance the map... </p>
 
-        <script src="pagemechanics.js"></script>
+        <div class="tooltip">&#9432;
+            <span class="tooltiptext">by Marcus Eng for ENG 189V. art done in roughly 4 hours, writing and code in roughly 1.5</span>
+        </div>
+        
 
     </body>
 
