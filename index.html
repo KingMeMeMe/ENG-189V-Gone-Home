@@ -14,42 +14,65 @@
 
             body {
                 justify-content: center;
-                background-color: rgb(15, 14, 14);
+                background-color: rgb(23, 18, 18);
+                background-image: url(static.jpg);
+                background-blend-mode: multiply;
             }
             .container {
                 display: grid;
-                grid-template-columns: 6fr 3fr;
+                grid-template-columns: 7fr 4fr;
+                grid-template-rows: 5fr 3fr;
                 grid-template-areas:
                 "map commentary"
-                "map commentary"
                 "map snapshot";
-                gap: 10px;
-                background-color: rgb(23, 18, 18);
-                padding: 5px;
+                gap: 15px;
                 height: 90vh;
                 width: 89vw;
                 margin: 0 auto;
+
+                min-height: 0;
+                min-width: 0;
             }
             .container > div {
                 border-style: dashed;
                 border-color: white;
+                overflow: hidden;
+                min-width: 0; 
+                align-content: center;
             }
             .container > div.map {
                 grid-area: map;
+                background-clip: padding-box;
+                border-width: 2.5em;
+                border-image: url(SingleBorder.png) 50 round;
             }
             .container > div.commentary {
                 grid-area: commentary;
                 background-clip: padding-box;
                 background-color: rgb(168, 149, 137);
+                background-image: url(paper.jpg);
+                background-blend-mode: multiply;
                 border-width: 0.5em;
                 border-image: url(CommentaryBorder.png) 25 round;
                 font-family: Caveat;
+                font-size:x-large;
+                word-break:normal;
+                white-space:normal;
+                overflow-y: scroll;
+                
+                padding: 0.25em 1.25em;
+                min-height: 0;
 
             }
             .container > div.snapshot {
                 border-style: solid;
-                border-width: 0.25em;
-                border-color: white;
+                background-clip: padding-box;
+                background-color: black;
+                border-width: 1.5em;
+                border-image: url(SingleBorder.png) 50 round;
+                margin: 0;
+                padding: 0;
+               
             }
             </style>
 
@@ -60,10 +83,20 @@
     <body>
         
         <div class="container">
-            <div class="map"> </div>
-            <div class="commentary"> </div>
-            <div class="snapshot"> </div>
+            <div class="travel-step" id="1" style="display:none;"></div>
+            <div class="map" id="map"> </div>
+            <div class="snapshot" id="snp" style="background: url('placeholder.png') no-repeat; background-size: contain; background-position: center;"> </div>
+            <div class="commentary" id="com"> 
+                <p>It’s about an hour or so into my playthrough. I’ve explored the left wing of the house pretty linearly, going from the dad’s office to the TV room and the music room, all the way down until I met the locked basement door. 
+                </p>
+                <p>Right now, I’m exploring the top floor since I tried to open the door to the right wing and saw that it was locked as well.
+                </p>
+            </div>
         </div>
+
+        <p style="font-family: Caveat; color: white; padding: 0em 5em;" id="instructions"> Press [SPACE] to advance the map... </p>
+
+        <script src="pagemechanics.js"></script>
 
     </body>
 
