@@ -82,7 +82,8 @@ let mapSteps = new Map([
 let end = mapSteps.size+1;
 
 window.addEventListener("keydown", function(event){
-    if (event.code === 'Space') {
+    if ((event.code === 'Space') || (event.keyCode == 32)) {
+        event.preventDefault();
         currentTravelStep += 1;
         update_travel();
         console.log(currentTravelStep);
